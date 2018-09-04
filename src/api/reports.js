@@ -2,6 +2,8 @@ import resource from 'resource-router-middleware';
 require('isomorphic-fetch');
 const qrcode = require('yaqrcode');
 const createReport = require('docx-templates').default;
+const fs = require('fs');
+const carbone = require('carbone');
 
 export default ({ config, db }) => resource({
 
@@ -61,6 +63,20 @@ export default ({ config, db }) => resource({
 	    }).then(success => {
 				console.log("SUCCESS ON CREATE REPORT");
 				res.json("http://localhost:8081/report/"+outputPath);
+				var data = {
+			   };
+
+				var options = {
+				 convertTo : 'pdf' //can be docx, txt, ...
+				};
+
+				carbone.render(outputName, data, options, function(err, result){
+				 if (err) return console.log(err);
+				 fs.writeFileSync("./src/reports/result.pdf", result);
+				 process.exit(); // to kill automatically LibreOffice workers
+				});
+
+
 			}).catch(error => {
 				console.log(error.message);
 				res.json("Error generating report: " + error.message);
