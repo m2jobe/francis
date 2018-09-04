@@ -1296,12 +1296,6 @@ docx-templates@^2.6.0:
     timm "1.2.5"
     vm2 "^3.6.1"
 
-docxtemplater@^3.8.3:
-  version "3.8.4"
-  resolved "https://registry.yarnpkg.com/docxtemplater/-/docxtemplater-3.8.4.tgz#77e3d53b8c99fb77c0438261833db4c8e0f600f7"
-  dependencies:
-    xmldom "^0.1.27"
-
 dot-prop@^4.1.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
@@ -3701,10 +3695,6 @@ write@^0.2.1:
 xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
-
-xmldom@^0.1.27:
-  version "0.1.27"
-  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.27.tgz#d501f97b3bdb403af8ef9ecc20573187aadac0e9"
 
 xtend@^4.0.0:
   version "4.0.1"

@@ -37,8 +37,7 @@ export default ({ config, db }) => resource({
 	create({ body }, res) {
     console.log("body", body);
 
-		try {
-	    return createReport({
+	 	createReport({
 	      template: "./src/templates/"+body.template,
 	      output: body.outputFileName ? "./src/reports/"+ body.outputFileName +".docx" : "./src/reports/"+ body.template+"_output"+Date.now()+".docx",
 	      data: query => body.placeHolders,
@@ -58,13 +57,15 @@ export default ({ config, db }) => resource({
 	          return { width: 6, height: 6, data, extension: '.gif' };
 	        },
 	      },
-	    });
-		} catch(err) {
-			console.log("ERR",err);
-			res.json("ERROR");
-		}
+	    }).then(success => {
+				console.log("SUCCESS ON CREATE REPORT");
+				res.json("Report Posted");
+			}).catch(error => {
+				console.log(error.message);
+				res.json("Error generating report: " + error.message);
+			});
 
-		res.json("Report Posted");
+
 	},
 
 	/** GET /:id - Return a given entity */
