@@ -42,6 +42,16 @@ initializeDb( db => {
 	    res.sendFile(path.join(__dirname + '/public/createReport.html'));
 	});
 
+	app.get('/report/:reportId', function(req, res) {
+			const reportId = req.params.reportId;
+			res.sendFile(path.join(__dirname + '/reports/'+reportId));
+	});
+
+	app.get('/template/:templateId', function(req, res) {
+			const templateId = req.params.templateId;
+			res.sendFile(path.join(__dirname + '/templates/'+templateId));
+	});
+
 	app.server.listen(process.env.PORT || config.port, () => {
 		console.log(`Started on port ${app.server.address().port}`);
 	});

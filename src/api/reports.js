@@ -36,10 +36,11 @@ export default ({ config, db }) => resource({
 	/** POST / - Create a new entity */
 	create({ body }, res) {
     console.log("body", body);
-
-	 	createReport({
+		const outputName = body.outputFileName ? "./src/reports/"+ body.outputFileName +".docx" : "./src/reports/"+ body.template+"_output"+Date.now()+".docx";
+		const outputPath = body.outputFileName ? body.outputFileName +".docx" : body.template+"_output"+Date.now()+".docx";
+		createReport({
 	      template: "./src/templates/"+body.template,
-	      output: body.outputFileName ? "./src/reports/"+ body.outputFileName +".docx" : "./src/reports/"+ body.template+"_output"+Date.now()+".docx",
+	      output: outputName,
 	      data: query => body.placeHolders,
 	      additionalJsContext: {
 	        tile: async (z, x, y, size = 3) => {
@@ -59,7 +60,7 @@ export default ({ config, db }) => resource({
 	      },
 	    }).then(success => {
 				console.log("SUCCESS ON CREATE REPORT");
-				res.json("Report Generated");
+				res.json("http://localhost:8081/report/"+outputPath);
 			}).catch(error => {
 				console.log(error.message);
 				res.json("Error generating report: " + error.message);
