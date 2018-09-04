@@ -59,7 +59,7 @@ export default ({ config, db }) => resource({
 	      },
 	    }).then(success => {
 				console.log("SUCCESS ON CREATE REPORT");
-				res.json("Report Posted");
+				res.json("Report Generated");
 			}).catch(error => {
 				console.log(error.message);
 				res.json("Error generating report: " + error.message);
