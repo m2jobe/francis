@@ -1,0 +1,90 @@
+import resource from 'resource-router-middleware';
+require('isomorphic-fetch');
+const qrcode = require('yaqrcode');
+const createReport = require('docx-templates').default;
+
+export default ({ config, db }) => resource({
+
+	/** Property name to store preloaded entity on `request`. */
+	id : 'report',
+
+	/** For requests with an `id`, you can auto-load the entity.
+	 *  Errors terminate the request, success sets `req[id] = data`.
+	 */
+	load(req, id, callback) {
+		let report = reports.find( report => report===id ),
+			err = report ? null : '';
+		callback(err, report);
+	},
+
+	/** GET / - List all entities */
+	index({ params }, res) {
+		/*const data = {
+		    name:"Tesla Inc.",
+				address: "304 Cresent Road",
+				city: "Hamilton",
+				province: "Ontario",
+				postal: "L5B2L3",
+				phone: "(400) 249 3403",
+				invoice: "13",
+				invoiceDate: "12/21/2017"
+		};
+    */
+		res.json("");
+	},
+
+	/** POST / - Create a new entity */
+	create({ body }, res) {
+    console.log("body", body);
+
+		try {
+	    return createReport({
+	      template: "./src/templates/"+body.template,
+	      output: body.outputFileName ? "./src/reports/"+ body.outputFileName +".docx" : "./src/reports/"+ body.template+"_output"+Date.now()+".docx",
+	      data: query => body.placeHolders,
+	      additionalJsContext: {
+	        tile: async (z, x, y, size = 3) => {
+	          const resp = await fetch(
+	            `http://tile.stamen.com/toner/${z}/${x}/${y}.png`
+	          );
+	          const buffer = resp.arrayBuffer
+	            ? await resp.arrayBuffer()
+	            : await resp.buffer();
+	          return { width: size, height: size, data: buffer, extension: '.png' };
+	        },
+	        qr: contents => {
+	          const dataUrl = qrcode(contents, { size: 500 });
+	          const data = dataUrl.slice('data:image/gif;base64,'.length);
+	          return { width: 6, height: 6, data, extension: '.gif' };
+	        },
+	      },
+	    });
+		} catch(err) {
+			console.log("ERR",err);
+			res.json("ERROR");
+		}
+
+		res.json("Report Posted");
+	},
+
+	/** GET /:id - Return a given entity */
+	read({ report }, res) {
+		res.json(report);
+	},
+
+	/** PUT /:id - Update a given entity */
+	update({ report, body }, res) {
+		for (let key in body) {
+			if (key!=='id') {
+				report[key] = body[key];
+			}
+		}
+		res.sendStatus(204);
+	},
+
+	/** DELETE /:id - Delete a given entity */
+	delete({ report }, res) {
+		reports.splice(reports.indexOf(report), 1);
+		res.sendStatus(204);
+	}
+});
