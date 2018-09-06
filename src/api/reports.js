@@ -79,7 +79,7 @@ export default ({ config, db }) => resource({
 	      },
 	    }).then(success => {
 				console.log("SUCCESS ON CREATE REPORT");
-				res.json(config.host+"/report/"+outputPath);
+				const filename = body.outputFileName ? body.outputFileName : body.template
 				var data = {
 			   };
 
@@ -91,7 +91,8 @@ export default ({ config, db }) => resource({
 				 if (err) {
 					 res.json("Error generating report: " + err.message);
 				 }
-				 fs.writeFileSync("./src/reports/result.pdf", result);
+				 fs.writeFileSync("./src/reports/"+filename+".pdf", result);
+				 res.json(config.host+"/report/"+filename+".pdf");
 				 process.exit(); // to kill automatically LibreOffice workers
 			 });
 
