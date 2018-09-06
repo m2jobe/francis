@@ -122,8 +122,8 @@
           outputFileName: outputFileName,
           placeHolders: json,
         }
+        $( "#result" ).empty().append( "Generating report please wait a couple seconds..." );
 
-        console.log("formData", formData);
         $.ajax({
             type: "POST",
             url: "/api/reports",

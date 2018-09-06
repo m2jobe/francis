@@ -51,7 +51,6 @@
       event.preventDefault();
        var formData = new FormData(this);
        console.log(formData)
-       $( "#result" ).empty().append( "Generating report please wait a couple seconds..." );
        $.ajax({
            type: "POST",
            url: "/api/templates",
