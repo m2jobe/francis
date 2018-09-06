@@ -5,6 +5,7 @@ const createReport = require('docx-templates').default;
 const fs = require('fs');
 const carbone = require('carbone');
 const imageType = require('image-type');
+import config from './config.json';
 
 export default ({ config, db }) => resource({
 
@@ -78,7 +79,7 @@ export default ({ config, db }) => resource({
 	      },
 	    }).then(success => {
 				console.log("SUCCESS ON CREATE REPORT");
-				res.json("http://localhost:8081/report/"+outputPath);
+				res.json(config.host+"/report/"+outputPath);
 				var data = {
 			   };
 

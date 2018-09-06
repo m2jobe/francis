@@ -6,3 +6,4 @@
 .DS_Store
 /src/reports
 .env
+/src/config.json
