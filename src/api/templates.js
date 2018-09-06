@@ -24,6 +24,12 @@ export default ({ config, db }) => resource({
 	 */
 	load(req, id, callback) {
 		var files = fs.readdirSync('./src/templates');
+    files = files.filter(function (item) {
+       return item.indexOf(".") !== 0;
+    });
+    files = files.filter(function (item) {
+       return item.indexOf("~") !== 0;
+    });
 		const templates = files;
 		console.log("templates", templates);
 
@@ -36,6 +42,12 @@ export default ({ config, db }) => resource({
 	index({ params }, res) {
 
 		var files = fs.readdirSync('./src/templates');
+    files = files.filter(function (item) {
+       return item.indexOf(".") !== 0;
+    });
+    files = files.filter(function (item) {
+       return item.indexOf("~") !== 0;
+    });
 		const templates = files;
 
 		res.json(templates);

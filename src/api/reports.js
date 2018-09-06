@@ -4,6 +4,7 @@ const qrcode = require('yaqrcode');
 const createReport = require('docx-templates').default;
 const fs = require('fs');
 const carbone = require('carbone');
+const imageType = require('image-type');
 
 export default ({ config, db }) => resource({
 
@@ -59,6 +60,21 @@ export default ({ config, db }) => resource({
 	          const data = dataUrl.slice('data:image/gif;base64,'.length);
 	          return { width: 6, height: 6, data, extension: '.gif' };
 	        },
+					imageURL: async contentURL => {
+
+						const resp = await fetch(
+	            contentURL
+	          );
+	          const buffer = resp.arrayBuffer
+	            ? await resp.arrayBuffer()
+	            : await resp.buffer();
+
+						const type = imageType(buffer);
+
+						return { width: 6, height: 6, data: buffer, extension: type.ext };
+
+
+					}
 	      },
 	    }).then(success => {
 				console.log("SUCCESS ON CREATE REPORT");
@@ -70,11 +86,13 @@ export default ({ config, db }) => resource({
 				 convertTo : 'pdf' //can be docx, txt, ...
 				};
 
-				carbone.render(outputName, data, options, function(err, result){
-				 if (err) return console.log(err);
+				/*carbone.render(outputName, data, options, function(err, result){
+				 if (err) {
+					 res.json("Error generating report: " + err.message);
+				 }
 				 fs.writeFileSync("./src/reports/result.pdf", result);
 				 process.exit(); // to kill automatically LibreOffice workers
-				});
+			 });*/
 
 
 			}).catch(error => {

@@ -7,6 +7,7 @@ import initializeDb from './db';
 import middleware from './middleware';
 import api from './api';
 import config from './config.json';
+require('dotenv').config()
 
 var path = require('path');
 
@@ -30,6 +31,15 @@ initializeDb( db => {
 
 	// internal middleware
 	app.use(middleware({ config, db }));
+
+	app.use('*', (req, res, next) => {
+		const apiKey = process.env.API_KEY;
+		if(req["headers"]["template-api-key"] == apiKey) {
+			next();
+		} else {
+			res.sendStatus(401);
+		}
+	});
 
 	// api router
 	app.use('/api', api({ config, db }));
