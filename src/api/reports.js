@@ -87,7 +87,7 @@ export default ({ config, db }) => resource({
 				 convertTo : 'pdf' //can be docx, txt, ...
 				};
 
-			 carbone.render(filename, data, options, function(err, result){
+			 carbone.render(outputName, data, options, function(err, result){
 				 if (err) {
 					 res.json("Error generating report: " + err.message);
 				 }
