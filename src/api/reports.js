@@ -5,7 +5,7 @@ const createReport = require('docx-templates').default;
 const fs = require('fs');
 const carbone = require('carbone');
 const imageType = require('image-type');
-import config from './config.json';
+import config from '../config.json';
 
 export default ({ config, db }) => resource({
 
