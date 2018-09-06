@@ -86,13 +86,13 @@ export default ({ config, db }) => resource({
 				 convertTo : 'pdf' //can be docx, txt, ...
 				};
 
-				/*carbone.render(outputName, data, options, function(err, result){
+			 carbone.render(outputName, data, options, function(err, result){
 				 if (err) {
 					 res.json("Error generating report: " + err.message);
 				 }
 				 fs.writeFileSync("./src/reports/result.pdf", result);
 				 process.exit(); // to kill automatically LibreOffice workers
-			 });*/
+			 });
 
 
 			}).catch(error => {
