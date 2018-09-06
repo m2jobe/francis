@@ -79,7 +79,7 @@ export default ({ config, db }) => resource({
 	      },
 	    }).then(success => {
 				console.log("SUCCESS ON CREATE REPORT");
-				const filename = body.outputFileName ? body.outputFileName : body.template
+				const filename = body.outputFileName ? body.outputFileName : body.template+"_output"+Date.now()
 				var data = {
 			   };
 
@@ -87,13 +87,13 @@ export default ({ config, db }) => resource({
 				 convertTo : 'pdf' //can be docx, txt, ...
 				};
 
-			 carbone.render(outputName, data, options, function(err, result){
+			 carbone.render(filename, data, options, function(err, result){
 				 if (err) {
 					 res.json("Error generating report: " + err.message);
 				 }
 				 fs.writeFileSync("./src/reports/"+filename+".pdf", result);
 				 res.json(config.host+"/report/"+filename+".pdf");
-				 process.exit(); // to kill automatically LibreOffice workers
+				 //process.exit(); // to kill automatically LibreOffice workers
 			 });
 
 
