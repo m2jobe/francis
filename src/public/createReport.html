@@ -67,6 +67,8 @@
         <small id="help" class="form-text text-muted">Ensure you are entering a unique filename (add todays date preferably at the end of the name). No need for file extension</small>
       </div>
       <br/>
+      <label for="checkForPDF">Check the box to output pdf, if left blank it will out a docx file</label>
+      <input type="checkbox" id="checkForPDF" name="checkForPDF" />
       <button onclick="generateTemplate();">Generate Template</button>
       <br/><br/>
       <div id="result"></div>
@@ -119,11 +121,13 @@
         var json = editor.get();
         var jsonString = JSON.stringify(json, null, 2);
         var outputFileName = $("#outputFilename").val();
+        var outputPDFBool = document.getElementById("checkForPDF").checked;
 
         var formData = {
           template: template,
           outputFileName: outputFileName,
           placeHolders: json,
+          outputPDFBool: outputPDFBool
         }
         $( "#result" ).empty().append( "Generating report please wait a couple seconds..." );
 

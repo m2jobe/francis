@@ -79,23 +79,26 @@ export default ({ config, db }) => resource({
 	      },
 	    }).then(success => {
 				console.log("SUCCESS ON CREATE REPORT");
-				const filename = body.outputFileName ? body.outputFileName : body.template+"_output"+Date.now()
-				var data = {
-			   };
+				if(outputPDFBool) {
+					const filename = body.outputFileName ? body.outputFileName : body.template+"_output"+Date.now()
+					var data = {
+				   };
 
-				var options = {
-				 convertTo : 'pdf' //can be docx, txt, ...
-				};
+					var options = {
+					 convertTo : 'pdf' //can be docx, txt, ...
+					};
 
-			 carbone.render(outputName, data, options, function(err, result){
-				 if (err) {
-					 res.json("Error generating report: " + err.message);
-				 }
-				 fs.writeFileSync("./src/reports/"+filename+".pdf", result);
-				 res.json(config.host+"/report/"+filename+".pdf");
-				 //process.exit(); // to kill automatically LibreOffice workers
-			 });
-
+				 carbone.render(outputName, data, options, function(err, result){
+					 if (err) {
+						 res.json("Error generating report: " + err.message);
+					 }
+					 fs.writeFileSync("./src/reports/"+filename+".pdf", result);
+					 res.json(config.host+"/report/"+filename+".pdf");
+					 //process.exit(); // to kill automatically LibreOffice workers
+				  });
+		 		} else {
+					res.json(config.host+"/report/"+outputPath);
+		 		}
 
 			}).catch(error => {
 				console.log(error.message);
