@@ -93,21 +93,17 @@
           "invoiceDate": "03/23/2018",
           "tname": "Table name",
           "tage": "e.g. 253",
-          "line1ID": "Cell 1",
-          "line1Name": "Name 1",
-          "line1Amount": "$50",
-          "line2ID": "Cell 2",
-          "line2Name": "Name 2",
-          "line2Amount": "$50",
-          "line3ID": "Cell 3",
-          "line3Name": "Name 3",
-          "line3Amount": "$50",
-          "line4ID": "Cell 4",
-          "line4Name": "Name 4",
-          "line4Amount": "$50",
-          "line5ID": "Cell 5",
-          "line5Name": "Name 5",
-          "line5Amount": "$50"
+          "tableData": [
+            {"id": "1", "name": "name1", "amount": "12"},
+            {"id": "2", "name": "name2", "amount": "23"},
+            {"id": "3", "name": "name3", "amount": "32"},
+            {"id": "4", "name": "name4", "amount": "3"},
+            {"id": "5", "name": "name5", "amount": "23"},
+            {"id": "6", "name": "name6", "amount": "54"},
+            {"id": "7", "name": "name7", "amount": "34"},
+            {"id": "8", "name": "name8", "amount": "5"},
+            {"id": "9", "name": "name9", "amount": "6"}
+            ] 
       };
       var editor = new JSONEditor(container, options, json);
 

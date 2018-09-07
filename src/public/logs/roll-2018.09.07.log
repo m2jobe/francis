@@ -60,3 +60,9 @@
 12:46:51.748 INFO  GET /logs/} 200 
 12:46:52.500 INFO  GET /logs/} 200 
 12:47:04.732 INFO  Started on port 8081 
+14:27:51.855 INFO  Started on port 8081 
+14:27:52.403 INFO  GET /createReport 200 
+14:27:53.674 INFO  GET /api/template 200 
+14:27:58.793 INFO  body{"template":"invoiceTemplate.docx","outputFileName":"","placeHolders":{"name":"Company name","address":"Company address","city":"New York","province":"New York","postal":"48593","phone":"(444) 234 2343","invoice":"#1534","invoiceDate":"03/23/2018","tname":"Table name","tage":"e.g. 253","tableData":[{"id":"1","name":"name1","amount":"12"},{"id":"2","name":"name2","amount":"23"},{"id":"3","name":"name3","amount":"32"},{"id":"4","name":"name4","amount":"3"},{"id":"5","name":"name5","amount":"23"},{"id":"6","name":"name6","amount":"54"},{"id":"7","name":"name7","amount":"34"},{"id":"8","name":"name8","amount":"5"},{"id":"9","name":"name9","amount":"6"}]},"outputPDFBool":false} 
+14:27:59.136 WARN  POST /api/reports Error generating report: Error executing command: INS line1ID
+line1ID is not defined 
