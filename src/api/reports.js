@@ -79,7 +79,7 @@ export default ({ config, db }) => resource({
 	      },
 	    }).then(success => {
 				console.log("SUCCESS ON CREATE REPORT");
-				if(outputPDFBool) {
+				if(body.outputPDFBool) {
 					const filename = body.outputFileName ? body.outputFileName : body.template+"_output"+Date.now()
 					var data = {
 				   };

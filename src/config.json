@@ -2,5 +2,5 @@
 	"port": 8081,
 	"bodyLimit": "100mb",
 	"corsHeaders": ["Link"],
-	"host": "http://localhost:8081"
+	"host": "http://13.58.157.47:8081"
 }

@@ -1,0 +1,586 @@
+
+> francis@0.3.0 prestart /home/ubuntu/francis
+> npm run -s build
+
+src/api/index.js -> dist/api/index.js
+src/api/reports.js -> dist/api/reports.js
+src/api/templates.js -> dist/api/templates.js
+src/db.js -> dist/db.js
+src/index.js -> dist/index.js
+src/lib/util.js -> dist/lib/util.js
+src/middleware/index.js -> dist/middleware/index.js
+src/models/templates.js -> dist/models/templates.js
+
+> francis@0.3.0 start /home/ubuntu/francis
+> node dist
+
+Started on port 8081
+[0mGET /createReport [32m200 [0m9.681 ms - 5587[0m
+[0mGET /api/templates [36m304 [0m2.264 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: '',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018' } }
+[0mPOST /api/reports [31m500 [0m12.409 ms - 1170[0m
+ReferenceError: regeneratorRuntime is not defined
+    at /home/ubuntu/francis/dist/api/reports.js:82:51
+    at create (/home/ubuntu/francis/dist/api/reports.js:130:7)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/francis/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/francis/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/francis/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/ubuntu/francis/node_modules/express/lib/router/index.js:174:3)
+[0mGET /createReport [36m304 [0m1.111 ms - -[0m
+[0mGET /api/templates [36m304 [0m0.725 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: '',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018' } }
+[0mPOST /api/reports [31m500 [0m1.513 ms - 1170[0m
+ReferenceError: regeneratorRuntime is not defined
+    at /home/ubuntu/francis/dist/api/reports.js:82:51
+    at create (/home/ubuntu/francis/dist/api/reports.js:130:7)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/francis/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/francis/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/francis/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/ubuntu/francis/node_modules/express/lib/router/index.js:174:3)
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! francis@0.3.0 start: `node dist`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the francis@0.3.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-09-06T03_33_07_046Z-debug.log
+
+> francis@0.3.0 dev /home/ubuntu/francis
+> nodemon -w src --exec "babel-node src --presets es2015,stage-0"
+
+[33m[nodemon] 1.18.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: /home/ubuntu/francis/src/**/*[39m
+[32m[nodemon] starting `babel-node src --presets es2015,stage-0`[39m
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! francis@0.3.0 dev: `nodemon -w src --exec "babel-node src --presets es2015,stage-0"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the francis@0.3.0 dev script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-09-06T03_34_08_512Z-debug.log
+Started on port 8081
+[0mGET /createReport [36m304 [0m7.950 ms - -[0m
+[0mGET /api/templates [36m304 [0m2.277 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: '',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018' } }
+SUCCESS ON CREATE REPORT
+[0mPOST /api/reports [32m200 [0m3364.869 ms - 78[0m
+[0mGET /createReport [36m304 [0m1.328 ms - -[0m
+[0mGET /api/templates [36m304 [0m1.003 ms - -[0m
+[0mGET /createReport [36m304 [0m0.662 ms - -[0m
+[0mGET /api/templates [36m304 [0m0.506 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: 'woop2',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018' } }
+SUCCESS ON CREATE REPORT
+[0mPOST /api/reports [32m200 [0m597.289 ms - 43[0m
+[0mGET /report/woop2.pdf [32m200 [0m3.769 ms - 73652[0m
+[0mGET /template/invoiceTemplate.docx [32m200 [0m1.206 ms - 31124[0m
+[0mGET /createReport [36m304 [0m0.570 ms - -[0m
+[0mGET /api/templates [36m304 [0m0.738 ms - -[0m
+[0mGET /template/invoiceTemplate.docx [32m200 [0m0.764 ms - 31124[0m
+[0mGET / [33m401 [0m32.325 ms - 12[0m
+[0mPOST /HNAP1/ [33m401 [0m0.478 ms - 12[0m
+[0mPOST /HNAP1/ [33m401 [0m0.401 ms - 12[0m
+[0mPOST /HNAP1/ [33m401 [0m0.357 ms - 12[0m
+[0mPOST /HNAP1/ [33m401 [0m0.358 ms - 12[0m
+[0mPOST /HNAP1/ [33m401 [0m0.387 ms - 12[0m
+[0mGET / [33m401 [0m0.325 ms - 12[0m
+[0mGET /robots.txt [33m401 [0m0.239 ms - 12[0m
+[0mGET /favicon.ico [33m401 [0m0.336 ms - 12[0m
+[0mPOST /HNAP1/ [33m401 [0m0.381 ms - 12[0m
+[0mPOST /HNAP1/ [33m401 [0m0.402 ms - 12[0m
+[0mGET /createReport [33m401 [0m0.328 ms - 12[0m
+[0mGET /favicon.ico [33m401 [0m0.345 ms - 12[0m
+[0mGET /createReport [33m401 [0m0.345 ms - 12[0m
+[0mGET /favicon.ico [33m401 [0m0.334 ms - 12[0m
+[0mGET /createReport [33m401 [0m0.364 ms - 12[0m
+[0mGET /favicon.ico [33m401 [0m0.353 ms - 12[0m
+[0mGET /createReport [32m200 [0m3.258 ms - 5587[0m
+[0mGET /api/templates [32m200 [0m1.754 ms - 24[0m
+[0mGET /favicon.ico [33m404 [0m11.302 ms - 150[0m
+[0mGET /template/invoiceTemplate.docx [32m200 [0m1.333 ms - 31124[0m
+[0mGET /template [33m404 [0m0.435 ms - 147[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: 'myinvoice',
+  placeHolders: 
+   { name: 'teste',
+     address: 'Company address',
+     city: 'Lisbon',
+     province: 'Lisbon',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018' } }
+SUCCESS ON CREATE REPORT
+[0mPOST /api/reports [32m200 [0m2002.756 ms - 47[0m
+[0mGET /report/myinvoice.pdf [32m200 [0m1.007 ms - 72863[0m
+[0mGET /createReport [36m304 [0m1.375 ms - -[0m
+[0mGET /api/templates [36m304 [0m1.137 ms - -[0m
+[0mGET / [32m200 [0m8.477 ms - 2357[0m
+[0mGET /createReport [36m304 [0m0.493 ms - -[0m
+[0mGET /api/templates [36m304 [0m0.444 ms - -[0m
+[0mPOST /HNAP1/ [33m401 [0m1.252 ms - 12[0m
+
+> francis@0.3.0 dev /home/ubuntu/francis
+> nodemon -w src --exec "babel-node src --presets es2015,stage-0"
+
+[33m[nodemon] 1.18.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: /home/ubuntu/francis/src/**/*[39m
+[32m[nodemon] starting `babel-node src --presets es2015,stage-0`[39m
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! francis@0.3.0 dev: `nodemon -w src --exec "babel-node src --presets es2015,stage-0"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the francis@0.3.0 dev script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-09-06T16_59_21_039Z-debug.log
+Started on port 8081
+[0mGET /createReport [32m200 [0m8.772 ms - 5650[0m
+[0mGET /api/templates [36m304 [0m2.431 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m1.440 ms - 150[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: 'testTable',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' } }
+SUCCESS ON CREATE REPORT
+[0mPOST /api/reports [32m200 [0m4956.243 ms - 47[0m
+[0mGET /report/testTable.pdf [32m200 [0m1.443 ms - 74657[0m
+
+> francis@0.3.0 prestart /home/ubuntu/francis
+> npm run -s build
+
+src/api/index.js -> dist/api/index.js
+src/api/reports.js -> dist/api/reports.js
+src/api/templates.js -> dist/api/templates.js
+src/db.js -> dist/db.js
+src/index.js -> dist/index.js
+src/lib/util.js -> dist/lib/util.js
+src/middleware/index.js -> dist/middleware/index.js
+src/models/templates.js -> dist/models/templates.js
+
+> francis@0.3.0 start /home/ubuntu/francis
+> node dist
+
+Started on port 8081
+[0mGET / [33m401 [0m5.223 ms - 12[0m
+[0mGET /robots.txt [33m401 [0m0.562 ms - 12[0m
+[0mGET /favicon.ico [33m401 [0m0.346 ms - 12[0m
+[0mGET / [32m200 [0m4.909 ms - 2357[0m
+[0mGET /favicon.ico [33m404 [0m1.387 ms - 150[0m
+[0mGET /createReport [32m200 [0m1.012 ms - 5650[0m
+[0mGET /api/templates [32m200 [0m1.486 ms - 24[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: 'ddd',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' } }
+[0mPOST /api/reports [31m500 [0m18.368 ms - 1170[0m
+ReferenceError: regeneratorRuntime is not defined
+    at /home/ubuntu/francis/dist/api/reports.js:82:51
+    at create (/home/ubuntu/francis/dist/api/reports.js:130:7)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/francis/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/francis/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/francis/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/ubuntu/francis/node_modules/express/lib/router/index.js:174:3)
+body { template: 'invoiceTemplate.docx',
+  outputFileName: 'ddd',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' } }
+[0mPOST /api/reports [31m500 [0m1.869 ms - 1170[0m
+ReferenceError: regeneratorRuntime is not defined
+    at /home/ubuntu/francis/dist/api/reports.js:82:51
+    at create (/home/ubuntu/francis/dist/api/reports.js:130:7)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/francis/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/francis/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/francis/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/ubuntu/francis/node_modules/express/lib/router/index.js:174:3)
+body { template: 'invoiceTemplate.docx',
+  outputFileName: 'ddd',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' } }
+[0mPOST /api/reports [31m500 [0m0.707 ms - 1170[0m
+ReferenceError: regeneratorRuntime is not defined
+    at /home/ubuntu/francis/dist/api/reports.js:82:51
+    at create (/home/ubuntu/francis/dist/api/reports.js:130:7)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/francis/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/francis/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/francis/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/ubuntu/francis/node_modules/express/lib/router/index.js:174:3)
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! francis@0.3.0 start: `node dist`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the francis@0.3.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-09-06T17_25_05_511Z-debug.log
+
+> francis@0.3.0 prestart /home/ubuntu/francis
+> npm run -s build
+
+src/api/index.js -> dist/api/index.js
+src/api/reports.js -> dist/api/reports.js
+src/api/templates.js -> dist/api/templates.js
+src/db.js -> dist/db.js
+src/index.js -> dist/index.js
+src/lib/util.js -> dist/lib/util.js
+src/middleware/index.js -> dist/middleware/index.js
+src/models/templates.js -> dist/models/templates.js
+
+> francis@0.3.0 start /home/ubuntu/francis
+> node dist
+
+Started on port 8081
+[0mGET /createReport [32m200 [0m8.673 ms - 5650[0m
+[0mGET /api/templates [36m304 [0m2.434 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: 'ddd',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' } }
+[0mPOST /api/reports [31m500 [0m15.661 ms - 1170[0m
+ReferenceError: regeneratorRuntime is not defined
+    at /home/ubuntu/francis/dist/api/reports.js:82:51
+    at create (/home/ubuntu/francis/dist/api/reports.js:130:7)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/francis/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/francis/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/francis/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/ubuntu/francis/node_modules/express/lib/router/index.js:174:3)
+[0mGET / [32m200 [0m1.245 ms - 2357[0m
+[0mGET /createReport [36m304 [0m0.860 ms - -[0m
+[0mGET /api/templates [36m304 [0m0.643 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: '',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' } }
+[0mPOST /api/reports [31m500 [0m1.164 ms - 1170[0m
+ReferenceError: regeneratorRuntime is not defined
+    at /home/ubuntu/francis/dist/api/reports.js:82:51
+    at create (/home/ubuntu/francis/dist/api/reports.js:130:7)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/francis/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/francis/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/francis/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/ubuntu/francis/node_modules/express/lib/router/index.js:174:3)
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! francis@0.3.0 start: `node dist`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the francis@0.3.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-09-06T17_26_53_061Z-debug.log
+npm ERR! missing script: start-server
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-09-06T17_27_14_295Z-debug.log
+
+> francis@0.3.0 prestart /home/ubuntu/francis
+> npm run -s build
+
+src/api/index.js -> dist/api/index.js
+src/api/reports.js -> dist/api/reports.js
+src/api/templates.js -> dist/api/templates.js
+src/db.js -> dist/db.js
+src/index.js -> dist/index.js
+src/lib/util.js -> dist/lib/util.js
+src/middleware/index.js -> dist/middleware/index.js
+src/models/templates.js -> dist/models/templates.js
+
+> francis@0.3.0 start /home/ubuntu/francis
+> node dist
+
+Started on port 8081
+[0mGET /createReport [32m200 [0m8.738 ms - 5650[0m
+[0mGET /api/templates [36m304 [0m2.368 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: '',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' } }
+[0mPOST /api/reports [31m500 [0m16.654 ms - 1170[0m
+ReferenceError: regeneratorRuntime is not defined
+    at /home/ubuntu/francis/dist/api/reports.js:82:51
+    at create (/home/ubuntu/francis/dist/api/reports.js:130:7)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/francis/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/francis/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/francis/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/ubuntu/francis/node_modules/express/lib/router/index.js:174:3)
+[0mGET /createReport [36m304 [0m0.947 ms - -[0m
+[0mGET /api/templates [36m304 [0m0.563 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: '',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' } }
+[0mPOST /api/reports [31m500 [0m0.922 ms - 1170[0m
+ReferenceError: regeneratorRuntime is not defined
+    at /home/ubuntu/francis/dist/api/reports.js:82:51
+    at create (/home/ubuntu/francis/dist/api/reports.js:130:7)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/francis/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/francis/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/francis/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/francis/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/francis/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/ubuntu/francis/node_modules/express/lib/router/index.js:174:3)
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! francis@0.3.0 start: `node dist`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the francis@0.3.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-09-06T17_28_15_418Z-debug.log
+
+> francis@0.3.0 start-server /home/ubuntu/francis
+> nodemon -w src --exec "babel-node src --presets es2015,stage-0"
+
+[33m[nodemon] 1.18.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: /home/ubuntu/francis/src/**/*[39m
+[32m[nodemon] starting `babel-node src --presets es2015,stage-0`[39m
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! francis@0.3.0 start-server: `nodemon -w src --exec "babel-node src --presets es2015,stage-0"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the francis@0.3.0 start-server script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-09-06T17_30_09_455Z-debug.log
+Started on port 8081
+[0mGET /createReport [32m200 [0m8.800 ms - 5650[0m
+[0mGET /api/templates [36m304 [0m2.454 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: '',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' } }
+SUCCESS ON CREATE REPORT
+[0mPOST /api/reports [32m200 [0m25770.158 ms - 78[0m
+
+> francis@0.3.0 prod /home/ubuntu/francis
+> nodemon -w src --exec "babel-node src --presets es2015,stage-0"
+
+[33m[nodemon] 1.18.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: /home/ubuntu/francis/src/**/*[39m
+[32m[nodemon] starting `babel-node src --presets es2015,stage-0`[39m
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! francis@0.3.0 prod: `nodemon -w src --exec "babel-node src --presets es2015,stage-0"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the francis@0.3.0 prod script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-09-06T18_38_34_465Z-debug.log
+Started on port 8081
+[0mGET /createReport [36m304 [0m7.073 ms - -[0m
+[0mGET /api/templates [36m304 [0m2.360 ms - -[0m
+body { template: 'invoiceTemplate.docx',
+  outputFileName: '',
+  placeHolders: 
+   { name: 'Company name',
+     address: 'Company address',
+     city: 'New York',
+     province: 'New York',
+     postal: '48593',
+     phone: '(444) 234 2343',
+     invoice: '#1534',
+     invoiceDate: '03/23/2018',
+     tname: 'Table name',
+     tage: 'e.g. 253' },
+  outputPDFBool: false }
+SUCCESS ON CREATE REPORT
+[0mPOST /api/reports [32m200 [0m658.355 ms - 79[0m

@@ -62,6 +62,10 @@ initializeDb( db => {
 			res.sendFile(path.join(__dirname + '/templates/'+templateId));
 	});
 
+        app.get('/logs', function(req, res) {
+            res.sendFile(path.join(__dirname + '/public/logs.out'));
+        });
+
 	app.server.listen(process.env.PORT || config.port, () => {
 		console.log(`Started on port ${app.server.address().port}`);
 	});
