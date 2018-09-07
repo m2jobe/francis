@@ -14,7 +14,7 @@ var storage = multer.diskStorage({
 })
 var upload = multer({ storage: storage }).single('avatar')
 
-export default ({ config, db }) => resource({
+export default ({ config, db, log }) => resource({
 
 	/** Property name to store preloaded entity on `request`. */
 	id : 'template',
@@ -31,7 +31,7 @@ export default ({ config, db }) => resource({
        return item.indexOf("~") !== 0;
     });
 		const templates = files;
-		console.log("templates", templates);
+		//console.log("templates", templates);
 
 		let template = templates.find( template => template===id ),
 			err = template ? null : 'The template you provided does not exist, please make sure you uploaded it';
@@ -51,6 +51,7 @@ export default ({ config, db }) => resource({
 		const templates = files;
 
 		res.json(templates);
+    log.info(`GET /api/template 200`)
 	},
 
 	/** POST / - Create a new entity */
@@ -61,19 +62,21 @@ export default ({ config, db }) => resource({
 	    if (err) {
 	      // An error occurred when uploading
 				console.log("err", err)
+        log.warn(`POST /api/templates 404 Error uploading template ${err.message}`)
 				res.json(err);
 	      return
 	    }
 
 	    // Everything went fine
 	  })
-
+    log.info(`POST /api/template 200 Template Posted`)
 		res.json("Template Posted");
 	},
 
 	/** GET /:id - Return a given entity */
 	read({ template }, res) {
 		res.json(template);
+    log.info(`GET /api/templates/:id 200`)
 	},
 
 	/** PUT /:id - Update a given entity */
@@ -90,5 +93,6 @@ export default ({ config, db }) => resource({
 	delete({ template }, res) {
 		templates.splice(templates.indexOf(template), 1);
 		res.sendStatus(204);
+    log.info(`DELETE /api/templates 200`)
 	}
 });

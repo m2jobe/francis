@@ -7,7 +7,7 @@ const carbone = require('carbone');
 const imageType = require('image-type');
 import config from '../config.json';
 
-export default ({ config, db }) => resource({
+export default ({ config, db, log }) => resource({
 
 	/** Property name to store preloaded entity on `request`. */
 	id : 'report',
@@ -35,10 +35,12 @@ export default ({ config, db }) => resource({
 		};
     */
 		res.json("");
+		log.info(`GET /api/reports 200`)
 	},
 
 	/** POST / - Create a new entity */
 	create({ body }, res) {
+		log.info("body", body)
     console.log("body", body);
 		const outputName = body.outputFileName ? "./src/reports/"+ body.outputFileName +".docx" : "./src/reports/"+ body.template+"_output"+Date.now()+".docx";
 		const outputPath = body.outputFileName ? body.outputFileName +".docx" : body.template+"_output"+Date.now()+".docx";
@@ -78,7 +80,6 @@ export default ({ config, db }) => resource({
 					}
 	      },
 	    }).then(success => {
-				console.log("SUCCESS ON CREATE REPORT");
 				if(body.outputPDFBool) {
 					const filename = body.outputFileName ? body.outputFileName : body.template+"_output"+Date.now()
 					var data = {
@@ -94,13 +95,16 @@ export default ({ config, db }) => resource({
 					 }
 					 fs.writeFileSync("./src/reports/"+filename+".pdf", result);
 					 res.json(config.host+"/report/"+filename+".pdf");
+					 log.info("POST /api/reports 200 SUCCESS ON CREATE PDF REPORT");
 					 //process.exit(); // to kill automatically LibreOffice workers
 				  });
 		 		} else {
 					res.json(config.host+"/report/"+outputPath);
+					log.info("POST /api/reports 200 SUCCESS ON CREATE WORD REPORT");
 		 		}
 
 			}).catch(error => {
+				log.warn(`POST /api/reports Error generating report: ${error.message}`)
 				console.log(error.message);
 				res.json("Error generating report: " + error.message);
 			});
@@ -111,6 +115,7 @@ export default ({ config, db }) => resource({
 	/** GET /:id - Return a given entity */
 	read({ report }, res) {
 		res.json(report);
+		log.info(`GET /api/reports 200`)
 	},
 
 	/** PUT /:id - Update a given entity */
