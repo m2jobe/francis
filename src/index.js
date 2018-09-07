@@ -11,7 +11,7 @@ require('dotenv').config()
 // create a rolling file logger based on date/time that fires process events
 const opts = {
 	errorEventName:'error',
-        logDirectory:'/Users/muhammed/documents/me/francis/src/public', // NOTE: folder must exist and be writable...
+        logDirectory:'/Users/muhammed/documents/me/francis/src/public/logs', // NOTE: folder must exist and be writable...
         fileNamePattern:'roll-<DATE>.log',
         dateFormat:'YYYY.MM.DD'
 };

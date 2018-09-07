@@ -1,0 +1,12 @@
+12:21:18.607 INFO  Started on port 8081 
+12:21:20.205 INFO  GET /createReport 200 
+12:21:20.779 INFO  GET /api/template 200 
+12:21:25.319 INFO  body{"template":"invoiceTemplate.docx","outputFileName":"","placeHolders":{"name":"Company name","address":"Company address","city":"New York","province":"New York","postal":"48593","phone":"(444) 234 2343","invoice":"#1534","invoiceDate":"03/23/2018","tname":"Table name","tage":"e.g. 253","line1ID":"Cell 1","line1Name":"Name 1","line1Amount":"$50","line2ID":"Cell 2","line2Name":"Name 2","line2Amount":"$50","line3ID":"Cell 3","line3Name":"Name 3","line3Amount":"$50","line4ID":"Cell 4","line4Name":"Name 4","line4Amount":"$50","line5ID":"Cell 5","line5Name":"Name 5","line5Amount":"$50"},"outputPDFBool":false} 
+12:21:26.190 INFO  POST /api/reports 200 SUCCESS ON CREATE WORD REPORT 
+12:21:30.090 INFO  body{"template":"invoiceTemplate.docx","outputFileName":"","placeHolders":{"name":"Company name","address":"Company address","city":"New York","province":"New York","postal":"48593","phone":"(444) 234 2343","invoice":"#1534","invoiceDate":"03/23/2018","tname":"Table name","tage":"e.g. 253","line1ID":"Cell 1","line1Name":"Name 1","line1Amount":"$50","line2ID":"Cell 2","line2Name":"Name 2","line2Amount":"$50","line3ID":"Cell 3","line3Name":"Name 3","line3Amount":"$50","line4ID":"Cell 4","line4Name":"Name 4","line4Amount":"$50","line5ID":"Cell 5","line5Name":"Name 5","line5Amount":"$50"},"outputPDFBool":true} 
+12:21:57.379 INFO  Started on port 8081 
+12:21:57.395 INFO  GET /createReport 200 
+12:21:58.286 INFO  GET /api/template 200 
+12:22:01.770 INFO  body{"template":"invoiceTemplate.docx","outputFileName":"","placeHolders":{"name":"Company name","address":"Company address","city":"New York","province":"New York","postal":"48593","phone":"(444) 234 2343","invoice":"#1534","invoiceDate":"03/23/2018","tname":"Table name","tage":"e.g. 253","line1ID":"Cell 1","line1Name":"Name 1","line1Amount":"$50","line2ID":"Cell 2","line2Name":"Name 2","line2Amount":"$50","line3ID":"Cell 3","line3Name":"Name 3","line3Amount":"$50","line4ID":"Cell 4","line4Name":"Name 4","line4Amount":"$50","line5ID":"Cell 5","line5Name":"Name 5","line5Amount":"$50"},"outputPDFBool":true} 
+12:23:34.532 INFO  Started on port 8081 
+12:23:45.438 INFO  Started on port 8081 
