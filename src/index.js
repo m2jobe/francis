@@ -7,6 +7,9 @@ import initializeDb from './db';
 import middleware from './middleware';
 import api from './api';
 import config from './config.json';
+const fs = require('fs');
+var serveIndex = require('serve-index');
+var path = require('path');
 require('dotenv').config()
 // create a rolling file logger based on date/time that fires process events
 const opts = {
@@ -16,8 +19,7 @@ const opts = {
         dateFormat:'YYYY.MM.DD'
 };
 const log = require('simple-node-logger').createRollingFileLogger( opts );
-
-var path = require('path');
+var logsPath = path.join(__dirname, 'public/logs');
 
 let app = express();
 app.server = http.createServer(app);
@@ -74,10 +76,12 @@ initializeDb( db => {
 			res.sendFile(path.join(__dirname + '/templates/'+templateId));
 	});
 
-  app.get('/logs', function(req, res) {
-			log.info(`GET /logs 200`)
-      res.sendFile(path.join(__dirname + '/public/logs.out'));
-  });
+	app.get('/logs/:logID', function(req, res) {
+			log.info(`GET /logs/${logID} 200`)
+			const logID = req.params.logID;
+			res.sendFile(path.join(__dirname + '/public/logs/'+logID));
+	});
+
 
 	app.server.listen(process.env.PORT || config.port, () => {
 		log.info(`Started on port ${app.server.address().port}`)

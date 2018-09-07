@@ -10,3 +10,53 @@
 12:22:01.770 INFO  body{"template":"invoiceTemplate.docx","outputFileName":"","placeHolders":{"name":"Company name","address":"Company address","city":"New York","province":"New York","postal":"48593","phone":"(444) 234 2343","invoice":"#1534","invoiceDate":"03/23/2018","tname":"Table name","tage":"e.g. 253","line1ID":"Cell 1","line1Name":"Name 1","line1Amount":"$50","line2ID":"Cell 2","line2Name":"Name 2","line2Amount":"$50","line3ID":"Cell 3","line3Name":"Name 3","line3Amount":"$50","line4ID":"Cell 4","line4Name":"Name 4","line4Amount":"$50","line5ID":"Cell 5","line5Name":"Name 5","line5Amount":"$50"},"outputPDFBool":true} 
 12:23:34.532 INFO  Started on port 8081 
 12:23:45.438 INFO  Started on port 8081 
+12:26:05.910 INFO  Started on port 8081 
+12:26:27.087 INFO  Started on port 8081 
+12:26:37.217 INFO  Started on port 8081 
+12:32:21.687 INFO  Started on port 8081 
+12:32:21.989 INFO  GET / 200 
+12:32:36.024 INFO  Started on port 8081 
+12:33:06.197 INFO  Started on port 8081 
+12:33:56.345 INFO  Started on port 8081 
+12:34:05.881 INFO  Started on port 8081 
+12:34:31.861 INFO  Started on port 8081 
+12:34:33.060 INFO  GET / 200 
+12:34:49.817 INFO  Started on port 8081 
+12:34:49.849 INFO  GET / 200 
+12:35:20.198 INFO  Started on port 8081 
+12:35:20.212 INFO  GET / 200 
+12:36:14.329 INFO  Started on port 8081 
+12:36:28.397 INFO  Started on port 8081 
+12:36:33.688 INFO  Started on port 8081 
+12:36:52.580 INFO  Started on port 8081 
+12:37:13.480 INFO  Started on port 8081 
+12:37:29.850 INFO  Started on port 8081 
+12:37:39.274 INFO  Started on port 8081 
+12:37:46.521 INFO  Started on port 8081 
+12:41:00.341 INFO  Started on port 8081 
+12:42:23.866 INFO  Started on port 8081 
+12:42:27.208 INFO  GET / 200 
+12:42:43.198 INFO  Started on port 8081 
+12:42:44.347 INFO  GET / 200 
+12:43:49.255 INFO  Started on port 8081 
+12:43:53.755 INFO  Started on port 8081 
+12:44:04.670 INFO  Started on port 8081 
+12:44:55.826 INFO  Started on port 8081 
+12:44:58.501 INFO  Started on port 8081 
+12:45:05.672 INFO  Started on port 8081 
+12:45:18.285 INFO  GET /logs/undefined 200 
+12:45:30.705 INFO  Started on port 8081 
+12:45:31.665 INFO  GET /logs/undefined 200 
+12:45:54.330 INFO  Started on port 8081 
+12:45:56.782 INFO  GET /logs/} 200 
+12:46:04.110 INFO  Started on port 8081 
+12:46:04.429 INFO  GET /logs/} 200 
+12:46:06.805 INFO  GET /logs/} 200 
+12:46:13.030 INFO  Started on port 8081 
+12:46:13.063 INFO  GET /logs/} 200 
+12:46:45.733 INFO  Started on port 8081 
+12:46:49.597 INFO  GET /logs/} 200 
+12:46:50.756 INFO  GET /logs/} 200 
+12:46:51.748 INFO  GET /logs/} 200 
+12:46:52.500 INFO  GET /logs/} 200 
+12:47:04.732 INFO  Started on port 8081 
